@@ -1,0 +1,79 @@
+/* 73_example_html_tables/asset/css/style.css */
+
+/* semantic block */
+body{
+  font-family: Roboto, Arial;
+  margin: 15px 20%;
+  padding: 0;
+  background-color: whitesmoke;
+  margin-bottom: 20%;
+}
+
+/* semantic block */
+.button-style {
+  font-family: Roboto, Arial;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  border: rgba(0, 0, 200, 0.6);
+  background-color: rgba(0, 0, 200, 0.3);
+  color: rgba(0, 0, 200, 0.6);
+  box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);
+  border-radius: 10px;
+  padding: 3px 10px;  
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* element block */
+mark {
+    background-color: rgb(230, 242, 247);
+    color: black;
+  }
+
+ /* classe per tabelle con CSS */
+.table2 table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina lo spazio tra i bordi delle celle */
+  }
+  
+.table2  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+.table2  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Colore di sfondo per le righe pari */
+  }
+.table2  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  
+
+.table1 table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table1 th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.table1 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table1 th {
+  background-color: #4c8baf;
+  color: white;
+}
+@media screen and (max-width: 600px)  {
+    table {
+    width: 100%;
+    display: block;
+    overflow-x: auto; /* Aggiunge uno scorrimento orizzontale */
+  }
+}
