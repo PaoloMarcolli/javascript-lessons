@@ -11,10 +11,38 @@
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="asset/img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="asset/img/favicon-32x32.png" sizes="32x32" type="image/png">
+    <!-- partono a cascata un po come il sync di C# e per procedere con successivo si attende il termine del precedente  -->
+    <!-- Se ce correlazione defer -->
+    <script src="#" defer></script>
+    <script src="#" defer></script>
+    <script src="#" defer></script>
+    <script src="#" defer></script>
+    <!-- Se non ce correlazione async -->
+    <!-- partono in maniera asincrona un po come il async di C# quindi non viene attasa la conclusione di quello precedente ma prosegue su quello successivo  -->
+    <script src="#" async></script>
+    <script src="#" async></script>
+    <script src="#" async></script>
+    <script src="#" async></script>
 </head>
 <body>
-    <header>
+    <!-- 
+            1) Cos'è JavaScript -html css js? 
+            2) Cosa puo fare JS : variabili, operazioni, eventi e tanto altro. API ( 3 parti,browser (Canvas,Google maps ecc...) )
+            3) Cosa fa JS sulle nostre pagine
+            4) Browser security ( ogni codice è eseguito solo nella proprio tab - semplice il codice puo essere eseguito solo nella propria pagina )
+            5) Ordine di lettura codice ( dall'alto verso il basso )
+            6) Codice interpretato vs codice compilato ( js interpreta dal browser subito C,C++ compilati in linguaggio nativo )
+            7) Differenza tra server side e client side
+            8) Codice dinamico vs statico
+            9) Come aggiungere JS alla pagina : interno ,esterno, inline
+            10) Strategie di caricamento codice, DOMContentLoaded, async ( indipendente ) ,defer ( in ordine ) 
+            11) Commenti ( //, /* */ )
 
+            "HTML la struttura di una pagina
+            CSS lo stile di una pagina
+            JS dinamicità alla pagina (da statica a dinamica)"  
+     -->
+    <header>
         <h1>Introduzione a JavaScript </h1>
         <div class="illustration">
             <img src='asset/img/header-image.png'
@@ -44,14 +72,44 @@
         <p>Inizia guardando il primo video di introduzione a JavaScript.
         </p>
         <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/84TYC44ezIU?si=dHaaFJmhPEyfnOP4" title="YouTube video player" width="100%" height="560px">
-
         </iframe>
-      </article>
+        <p>Ecco un esempio di javascript</p>
+        <p class="button-style">Player 1: Chris</p>
+        <p >Cliccando sul paragrafo o sul pulsante verrà visualizzato un prompt di inserimento per variare il nome del giocatore</p>
+        <p>Ecco un esempio di javascript inline</p>
+        <!-- 4 definizione inline Sconsigliata perchè poi non si capisce nulla -->
+        <p onclick="ciao()">Player 1: Chris</p>
+    </article>
       <article>
       </article>      
     </main>
     <footer>
         <p>&copy; 2024 Lezioni di Web Development</p>
-    </footer>    
+    </footer>   
+    <!-- 1 definizione esterna -->
+    <script src="asset/js/jsButtonParagraph.js"></script> 
+    <script>
+        /* 2 definizione interna
+        const paragraph = document.querySelector('p.button-style');
+        paragraph.addEventListener('click', updateName);
+        
+        function updateName(){
+            let name = prompt('Enter your name:');
+            paragraph.textContent = 'Player 1: ' + name;
+        }
+        function ciao(){
+            alert('Ciao ' );
+        }*/
+       /* 3 modo esponendo l'evento di caricamento del DOM*/l 
+       document.addEventListener('DOMContentLoaded', function() {   
+            const paragraph = document.querySelector('p.button-style');
+            paragraph.addEventListener('click', updateName);
+            function updateName(){
+                let name = prompt('Enter your name:');
+                paragraph.textContent = 'Player 1: ' + name;
+            }
+        });   
+
+     </script>        
 </body>
 </html>
