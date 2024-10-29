@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduzione a JavaScript</title>
+    <title>Tipi, operatori e statement</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
@@ -11,74 +11,26 @@
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="asset/img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="asset/img/favicon-32x32.png" sizes="32x32" type="image/png">
-    <!-- partono a cascata un po come il sync di C# e per procedere con successivo si attende il termine del precedente  -->
-    <!-- Se ce correlazione defer -->
-    <script src="#" defer></script>
-    <script src="#" defer></script>
-    <script src="#" defer></script>
-    <script src="#" defer></script>
-    <!-- Se non ce correlazione async -->
-    <!-- partono in maniera asincrona un po come il async di C# quindi non viene attasa la conclusione di quello precedente ma prosegue su quello successivo  -->
-    <script src="#" async></script>
-    <script src="#" async></script>
-    <script src="#" async></script>
-    <script src="#" async></script>
 </head>
 <body>
-    <!-- 
-            1) Cos'è JavaScript -html css js? 
-            2) Cosa puo fare JS : variabili, operazioni, eventi e tanto altro. API ( 3 parti,browser (Canvas,Google maps ecc...) )
-            3) Cosa fa JS sulle nostre pagine
-            4) Browser security ( ogni codice è eseguito solo nella proprio tab - semplice il codice puo essere eseguito solo nella propria pagina )
-            5) Ordine di lettura codice ( dall'alto verso il basso )
-            6) Codice interpretato vs codice compilato ( js interpreta dal browser subito C,C++ compilati in linguaggio nativo )
-            7) Differenza tra server side e client side
-            8) Codice dinamico vs statico
-            9) Come aggiungere JS alla pagina : interno ,esterno, inline
-            10) Strategie di caricamento codice, DOMContentLoaded, async ( indipendente ) ,defer ( in ordine ) 
-            11) Commenti ( //, /* */ )
-
-            "HTML la struttura di una pagina
-            CSS lo stile di una pagina
-            JS dinamicità alla pagina (da statica a dinamica)"  
-     -->
     <header>
-        <h1>Introduzione a JavaScript </h1>
-        <div class="illustration">
-            <img src='asset/img/header-image.png'
-            srcset='asset/img/header-image.png 1x,
-            asset/img/header-image.png 2x'
-            style='width: 100%;height: auto;'/>
-        </div>
+        <h1>Tipi, operatori e statement </h1>
     </header>
     <main>
       <article>
         <p>
-            JavaScript è un linguaggio fondamentale nello sviluppo web, perché permette di rendere le applicazioni web dinamiche, ed è l’elemento che permette all’utente di interagire con esse.
+            Entriamo nel vivo di questo linguaggio. Iniziamo con i tipi di dati, i mattoni fondamentali su cui costruiremo le nostre future applicazioni. Comprenderemo <strong>come JavaScript gestisce diversi tipi di dati</strong>, dai semplici valori come numeri e stringhe, a strutture più complesse come gli oggetti.
         </p>
         <p>
-            Per esempio, grazie alla conoscenza di JavaScript, il Coach Andrea Campana, Software Engineer di Prima Assicurazioni, una delle aziende in ambito fintech a più alta crescita e impatto a livello europeo, ha diminuito drasticamente il tempo speso dai consulenti assicurativi della startup in cui lavorava per aiutare i clienti nella stipulazione delle polizze.
+            Successivamente, <strong>ci addentreremo nel mondo degli operatori</strong>, gli strumenti che ci permettono di manipolare questi dati in modi che possono sembrare semplici all'inizio, ma che sono estremamente potenti nelle mani giuste. Vedremo come operazioni quali l'assegnazione, il confronto, l'aritmetica e la logica giocano un ruolo cruciale nello sviluppo di codice dinamico e interattivo.
         </p>
         <p>
-            Grazie a JavaScript, infatti, il sito web comunicava istantaneamente ai clienti eventuali errori di compilazione dei dati e gli stessi utenti erano quindi in grado di correggerli. E così il tempo speso dai consulenti assicurativi per aiutare i clienti è sceso del 30%!
+            Infine, esploreremo gli statement, o dichiarazioni, che ci guidano nel controllo del flusso di esecuzione del nostro codice. Impareremo come costruire logiche condizionali, cicli e funzioni, che sono essenziali per creare applicazioni che non solo rispondono all'input dell'utente ma sono anche efficienti e potenti.
         </p>
         <p>
-            Oggi è infatti importantissimo curare il processo di interazione tra macchina (o applicazione) e uomo, dato che deve avvenire nel modo più naturale e stimolante possibile per far sì che il prodotto o il servizio sia di gradimento al consumatore.
+            Questa sessione è più di una semplice lezione; è un invito a pensare in modo critico su come i vari elementi di JavaScript si uniscono per creare applicazioni web ricche e interattive.
         </p>
-        <p>
-            In questo Corso imparerai a conoscere le basi per utilizzare JavaScript, linguaggio fondamentale per rendere le applicazioni web dinamiche, e per sviluppare un'applicazione JavaScript.
-            Inizia guardando il primo video di introduzione a JavaScript.
-        </p>    
-        <p>Inizia guardando il primo video di introduzione a JavaScript.
-        </p>
-        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/84TYC44ezIU?si=dHaaFJmhPEyfnOP4" title="YouTube video player" width="100%" height="560px">
-        </iframe>
-        <p>Ecco un esempio di javascript</p>
-        <p class="button-style">Player 1: Chris</p>
-        <p >Cliccando sul paragrafo o sul pulsante verrà visualizzato un prompt di inserimento per variare il nome del giocatore</p>
-        <p>Ecco un esempio di javascript inline</p>
-        <!-- 4 definizione inline Sconsigliata perchè poi non si capisce nulla -->
-        <p onclick="ciao()">Player 1: Chris</p>
+
     </article>
       <article>
       </article>      
@@ -86,30 +38,5 @@
     <footer>
         <p>&copy; 2024 Lezioni di Web Development</p>
     </footer>   
-    <!-- 1 definizione esterna -->
-    <script src="asset/js/jsButtonParagraph.js"></script> 
-    <script>
-        /* 2 definizione interna
-        const paragraph = document.querySelector('p.button-style');
-        paragraph.addEventListener('click', updateName);
-        
-        function updateName(){
-            let name = prompt('Enter your name:');
-            paragraph.textContent = 'Player 1: ' + name;
-        }
-        function ciao(){
-            alert('Ciao ' );
-        }*/
-       /* 3 modo esponendo l'evento di caricamento del DOM*/l 
-       document.addEventListener('DOMContentLoaded', function() {   
-            const paragraph = document.querySelector('p.button-style');
-            paragraph.addEventListener('click', updateName);
-            function updateName(){
-                let name = prompt('Enter your name:');
-                paragraph.textContent = 'Player 1: ' + name;
-            }
-        });   
-
-     </script>        
 </body>
 </html>

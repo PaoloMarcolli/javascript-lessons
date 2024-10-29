@@ -11,39 +11,21 @@
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="asset/img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="asset/img/favicon-32x32.png" sizes="32x32" type="image/png">
-    <!-- partono a cascata un po come il sync di C# e per procedere con successivo si attende il termine del precedente  -->
-    <!-- Se ce correlazione defer -->
-    <script src="#" defer></script>
-    <script src="#" defer></script>
-    <script src="#" defer></script>
-    <script src="#" defer></script>
-    <!-- Se non ce correlazione async -->
-    <!-- partono in maniera asincrona un po come il async di C# quindi non viene attasa la conclusione di quello precedente ma prosegue su quello successivo  -->
-    <script src="#" async></script>
-    <script src="#" async></script>
-    <script src="#" async></script>
-    <script src="#" async></script>
 </head>
 <body>
     <!-- 
-            1) Cos'è JavaScript -html css js? 
-            2) Cosa puo fare JS : variabili, operazioni, eventi e tanto altro. API ( 3 parti,browser (Canvas,Google maps ecc...) )
-            3) Cosa fa JS sulle nostre pagine
-            4) Browser security ( ogni codice è eseguito solo nella proprio tab - semplice il codice puo essere eseguito solo nella propria pagina )
-            5) Ordine di lettura codice ( dall'alto verso il basso )
-            6) Codice interpretato vs codice compilato ( js interpreta dal browser subito C,C++ compilati in linguaggio nativo )
-            7) Differenza tra server side e client side
-            8) Codice dinamico vs statico
-            9) Come aggiungere JS alla pagina : interno ,esterno, inline
-            10) Strategie di caricamento codice, DOMContentLoaded, async ( indipendente ) ,defer ( in ordine ) 
-            11) Commenti ( //, /* */ )
+        1) Cos'è una variabile 
+        2) Dichiarare una variabile
+        3) Inizializzare una variabile
+        4) Differenza tra var e let
+        5) Aggiornare la variabile
+        6) Tipi di variabili :numeri,stringhe,booleani,array*,oggetti*
+        7) Tipizzazione dinamica    
+        8) Costanti in javascript
 
-            "HTML la struttura di una pagina
-            CSS lo stile di una pagina
-            JS dinamicità alla pagina (da statica a dinamica)"  
      -->
     <header>
-        <h1>Introduzione a JavaScript </h1>
+        <h1>Variabili </h1>
         <div class="illustration">
             <img src='asset/img/header-image.png'
             srcset='asset/img/header-image.png 1x,
@@ -54,31 +36,68 @@
     <main>
       <article>
         <p>
-            JavaScript è un linguaggio fondamentale nello sviluppo web, perché permette di rendere le applicazioni web dinamiche, ed è l’elemento che permette all’utente di interagire con esse.
+            Nell'ambito dello sviluppo di applicazioni JavaScript, lavorare con i dati è una pratica comune. Per esempio, gestire i dettagli dei prodotti e il carrello in un e-commerce o trattare con utenti e messaggi in un'app di chat.
         </p>
         <p>
-            Per esempio, grazie alla conoscenza di JavaScript, il Coach Andrea Campana, Software Engineer di Prima Assicurazioni, una delle aziende in ambito fintech a più alta crescita e impatto a livello europeo, ha diminuito drasticamente il tempo speso dai consulenti assicurativi della startup in cui lavorava per aiutare i clienti nella stipulazione delle polizze.
+            Per immagazzinare tali informazioni, si ricorre all'uso delle variabili.
         </p>
         <p>
-            Grazie a JavaScript, infatti, il sito web comunicava istantaneamente ai clienti eventuali errori di compilazione dei dati e gli stessi utenti erano quindi in grado di correggerli. E così il tempo speso dai consulenti assicurativi per aiutare i clienti è sceso del 30%!
+            <strong>Una variabile può essere intesa come un contenitore etichettato per dati, che permette di salvare e manipolare valori come numeri, stringhe e altro.</strong> La creazione di una variabile avviene attraverso l'uso della parola chiave let, seguita da un'assegnazione iniziale del valore mediante l'operatore =. Per esempio, si può iniziare con la dichiarazione
         </p>
         <p>
-            Oggi è infatti importantissimo curare il processo di interazione tra macchina (o applicazione) e uomo, dato che deve avvenire nel modo più naturale e stimolante possibile per far sì che il prodotto o il servizio sia di gradimento al consumatore.
+            <pre>
+                <code>
+    let nome;
+                </code>
+            </pre>
+            e poi assegnare un valore con
+            <pre>
+                <code>
+    messaggio = 'Ciao!';
+                </code>
+            </pre>
         </p>
         <p>
-            In questo Corso imparerai a conoscere le basi per utilizzare JavaScript, linguaggio fondamentale per rendere le applicazioni web dinamiche, e per sviluppare un'applicazione JavaScript.
-            Inizia guardando il primo video di introduzione a JavaScript.
+            È possibile anche combinare dichiarazione e assegnazione in un'unica istruzione.
         </p>    
-        <p>Inizia guardando il primo video di introduzione a JavaScript.
+        <p>
+            <strong>È ammesso dichiarare più variabili contemporaneamente separandole con una virgola, benché ciò possa influire negativamente sulla chiarezza del codice.</strong> Si raccomanda di mantenere una variabile per riga per preservare la leggibilità. La parola chiave var, pur essendo più datata, si comporta in maniera simile a let, ma con alcune distinzioni che saranno esplorate più avanti.            
         </p>
-        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/84TYC44ezIU?si=dHaaFJmhPEyfnOP4" title="YouTube video player" width="100%" height="560px">
-        </iframe>
-        <p>Ecco un esempio di javascript</p>
-        <p class="button-style">Player 1: Chris</p>
-        <p >Cliccando sul paragrafo o sul pulsante verrà visualizzato un prompt di inserimento per variare il nome del giocatore</p>
-        <p>Ecco un esempio di javascript inline</p>
-        <!-- 4 definizione inline Sconsigliata perchè poi non si capisce nulla -->
-        <p onclick="ciao()">Player 1: Chris</p>
+        <p>
+            Le variabili sono simili a scatole etichettate che contengono dati, e il loro contenuto può essere modificato all'occorrenza. È importante notare che una variabile deve essere dichiarata una sola volta; tentativi di ridefinizione porteranno a errori.
+        </p>
+        <p>
+            Per quanto riguarda la nomenclatura delle variabili, ci sono alcune regole da seguire: utilizzare solo lettere, numeri, il simbolo del dollaro $ e l'underscore _, con l'esclusione dei numeri come primo carattere. È pratica comune usare il camelCase per nomi composti da più parole.
+        </p>     
+        <p>
+            <strong> Ci sono alcune parole riservate che non possono essere utilizzate come nomi di variabili perché hanno un significato specifico in JavaScript, come let, class, return e function.</strong>
+        </p>
+        <p>
+            La dichiarazione di variabili senza 'use strict' può comportare comportamenti inaspettati, quindi è consigliato definire sempre le variabili prima del loro utilizzo.
+        </p>    
+        <p>
+            Per indicare valori che non dovrebbero cambiare, si utilizza const per dichiarare costanti, le quali, se tentassimo di modificare, genererebbero errori.
+        </p>
+        <p>
+            L'uso di costanti con nomi in maiuscolo è una convenzione per valori noti prima dell'esecuzione del programma, migliorando la leggibilità e prevenendo errori.
+        </p>
+        <p>
+            <pre>
+                <code>
+    const COLOR_RED = "#F00";
+                </code>
+            </pre>
+        </p>
+        <p>
+            La scelta dei nomi per le variabili è fondamentale per la chiarezza e la manutenibilità del codice. Nomi ben scelti rendono il codice più accessibile e facilitano la comprensione e la modifica futura.
+        </p>
+        <p>
+            Infine, evitare il riutilizzo delle variabili per scopi diversi è una buona pratica di programmazione, contribuendo a mantenere il codice organizzato e chiaro, facilitando il debug e l'ottimizzazione da parte dei motori JavaScript.
+        </p>
+        <p>
+            Guarda il video qui sotto per rafforzare le tue conoscenze su questo tema.
+        </p>
+        <iframe width="796" height="350" src="https://www.youtube.com/embed/JyHtBUU2w5g" title="Javascript Tutorial Italiano 02 - Le VARIABILI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
     </article>
       <article>
       </article>      
@@ -86,10 +105,6 @@
     <footer>
         <p>&copy; 2024 Lezioni di Web Development</p>
     </footer>   
-    <!-- 1 definizione esterna -->
     <script src="asset/js/script.js"></script>
-    <script>
-        console.log('Ciao, mondo!');
-     </script>        
 </body>
 </html>
